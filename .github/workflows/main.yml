@@ -22,15 +22,19 @@ jobs:
       run: pip install -U 'sphinx<1.8' sphinx_rtd_theme sphinxcontrib-versioning
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
 
     # Builds the documentation for all branches and tags
     - name: Build Documentation
       run: sphinx-versioning build -w master docs 'docs/_build/html'
 
     # Deploy to Github Pages
-    - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v1.4.1
+    - name: Deploy to Github Pages
+      uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
-        # Build directory to deploy
-        build_dir: 'docs/_build/html'
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: 'docs/_build/html'
