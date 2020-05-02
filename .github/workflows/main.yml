@@ -23,7 +23,7 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v2
     - name: Setup Syphinx
-      run: pip install -U sphinx sphinx_rtd_theme sphinxcontrib-versioning
+      run: pip install -U 'sphinx<1.8' sphinx_rtd_theme sphinxcontrib-versioning
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
