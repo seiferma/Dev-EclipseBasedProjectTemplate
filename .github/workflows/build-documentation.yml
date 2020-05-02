@@ -1,0 +1,39 @@
+name: Sphynx Documentation
+
+# Build for pushes to master and new tags
+on:
+  push:
+    branches: [ master ]
+    tags:
+    - '*'
+
+jobs:
+  build:
+
+    # Run on latest Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    
+    # Setup build environment
+    - name: Setup Python
+      uses: actions/setup-python@v2
+    - name: Setup Syphinx
+      run: pip install -U 'sphinx<1.8' sphinx_rtd_theme sphinxcontrib-versioning
+
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    # Builds the documentation for all branches and tags
+    - name: Build Documentation
+      run: sphinx-versioning build -w master docs 'docs/_build/html'
+
+    # Deploy to Github Pages
+    - name: Deploy to Github Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: 'docs/_build/html'
+        force_orphan: true
