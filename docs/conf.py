@@ -118,7 +118,7 @@ html_sidebars = {
 
 def get_github_info():
 	git_repo = git.Repo(__file__, search_parent_directories=True)
-	print(vars(git_repo.remotes))
+	print(git_repo.remotes.origin.url)
 	remote_url = git_repo.remotes.origin.url
 	regex = r"([^\/:]+)\/([^\/]+)\.git"
 	result = re.findall(regex, remote_url)
