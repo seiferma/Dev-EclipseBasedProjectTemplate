@@ -13,18 +13,18 @@ jobs:
     # Run on latest Ubuntu
     runs-on: ubuntu-latest
     steps:
-    
-    # Setup build environment
-    - name: Setup Python
-      uses: actions/setup-python@v2
-    - name: Setup Syphinx
-      run: pip install -U -r docs/requirements.txt
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@v2
       with:
         persist-credentials: false
+
+    # Setup build environment
+    - name: Setup Python
+      uses: actions/setup-python@v2
+    - name: Setup Syphinx
+      run: pip install -U -r docs/requirements.txt
 
     # Builds the documentation for all branches and tags
     - name: Build Documentation
