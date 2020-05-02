@@ -117,17 +117,22 @@ html_sidebars = {
 }
 
 def get_github_info():
-	git_repo = git.Repo(__file__, search_parent_directories=True)
-	print(git_repo.remotes.origin.url)
-	remote_url = git_repo.remotes.origin.url
-	regex = r"([^\/:]+)\/([^\/]+)\.git"
-	result = re.findall(regex, remote_url)
-	github_user = result[0][0]
-	github_repo = result[0][1]
-	return github_user, github_repo
+    git_repo = git.Repo(__file__, search_parent_directories=True)
+    remote_url = git_repo.remotes.origin.url
+    regex = re.compile("(?P<user>[^\/:]+)\/(((?P<repo0>[^\/]+)\.git$)|(?P<repo1>[^\/]+$))")
+    github_user = None
+    github_repo = None
+    for match in regex.finditer(remote_url):
+        result = match.groupdict()
+        github_user = result['user']
+        if result['repo0'] is None:
+            github_repo = result['repo1']
+        else:
+            github_repo = result['repo0']
+    return github_user, github_repo
 
 html_context = {
-  "display_github": True, # Add 'Edit on Github' link instead of 'View page source'
+  "display_github": True,
   "github_user": get_github_info()[0],
   "github_repo": get_github_info()[1],
   "github_version": "master",
