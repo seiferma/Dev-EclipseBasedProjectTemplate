@@ -20,7 +20,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import re,git
+import os,re,git
 
 # -- General configuration ------------------------------------------------
 
@@ -117,8 +117,10 @@ html_sidebars = {
 }
 
 def get_github_info():
-    git_repo = git.Repo(__file__, search_parent_directories=True)
-    remote_url = git_repo.remotes.origin.url
+    remote_url = os.environ.get('GITHUB_REPOSITORY')
+    if remote_url is None:
+        git_repo = git.Repo(__file__, search_parent_directories=True)
+        remote_url = git_repo.remotes.origin.url
     regex = re.compile("(?P<user>[^\/:]+)\/(((?P<repo0>[^\/]+)\.git$)|(?P<repo1>[^\/]+$))")
     github_user = None
     github_repo = None
