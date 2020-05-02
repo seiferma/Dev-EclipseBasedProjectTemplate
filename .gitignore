@@ -12,3 +12,4 @@ buildNumber.properties
 bin/
 src-gen/
 xtend-gen/
+.vscode

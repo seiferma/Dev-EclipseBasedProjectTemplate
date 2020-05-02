@@ -35,7 +35,9 @@ extensions = ['sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
-    'sphinx.ext.githubpages']
+    'sphinx.ext.githubpages',
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.todo']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -51,8 +53,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Dev-EclipseBasedProjectTemplate'
-copyright = '2020, Stephan Seifermann'
-author = 'Stephan Seifermann'
+copyright = '2020, MDSD.tools'
+author = 'MDSD.tools Team'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -93,7 +95,9 @@ html_theme = "sphinx_rtd_theme"
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'display_version': False
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
