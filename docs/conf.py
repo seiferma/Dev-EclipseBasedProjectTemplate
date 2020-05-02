@@ -20,7 +20,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+import re,git
 
 # -- General configuration ------------------------------------------------
 
@@ -116,6 +116,24 @@ html_sidebars = {
     ]
 }
 
+def get_github_info():
+	git_repo = git.Repo(__file__, search_parent_directories=True)
+	remote_url = git_repo.remotes.origin.url
+	regex = r"([^\/:]+)\/([^\/]+)\.git"
+	result = re.findall(regex, remote_url)
+	github_user = result[0][0]
+	github_repo = result[0][1]
+	return github_user, github_repo
+
+html_context = {
+  "display_github": True, # Add 'Edit on Github' link instead of 'View page source'
+  "github_user": get_github_info()[0],
+  "github_repo": get_github_info()[1],
+  "github_version": "master",
+  "conf_py_path": "/docs/",
+  "source_suffix": source_suffix,
+}
+
 
 # -- Options for HTMLHelp output ------------------------------------------
 
@@ -148,7 +166,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'Dev-EclipseBasedProjectTemplate.tex', 'Dev-EclipseBasedProjectTemplate Documentation',
-     'Stephan Seifermann', 'manual'),
+     'MDSD.tools', 'manual'),
 ]
 
 
@@ -172,9 +190,6 @@ texinfo_documents = [
      author, 'Dev-EclipseBasedProjectTemplate', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}
