@@ -30,7 +30,7 @@ jobs:
 
     # Builds the documentation for all branches and tags
     - name: Build Documentation
-      run: sphinx-versioning build -w master docs $HTML_DIR
+      run: echo $HTML_DIR && sphinx-versioning build -w master docs $HTML_DIR
 
     # Deploy to Github Pages
     - name: GitHub Pages
