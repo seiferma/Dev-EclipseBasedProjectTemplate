@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Development Environment &mdash; Dev-EclipseBasedProjectTemplate 0.1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'0.1.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/banner.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Developing an Eclipse Plugin" href="dev-eclipseplugin.html" />
+    <link rel="prev" title="Quick Start Guide" href="quickstart.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Dev-EclipseBasedProjectTemplate
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Development Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#minimum-requirements-for-building">Minimum Requirements for Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements-for-developing-in-eclipse">Requirements for Developing in Eclipse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements-of-specific-project">Requirements of Specific Project</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dev-eclipseplugin.html">Developing an Eclipse Plugin</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Dev-EclipseBasedProjectTemplate</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Development Environment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/seiferma/Dev-EclipseBasedProjectTemplate/blob/master/docs/development-environment.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="development-environment">
+<h1>Development Environment<a class="headerlink" href="#development-environment" title="Permalink to this headline">¶</a></h1>
+<p>The development depends on what you want to do.</p>
+<div class="section" id="minimum-requirements-for-building">
+<h2>Minimum Requirements for Building<a class="headerlink" href="#minimum-requirements-for-building" title="Permalink to this headline">¶</a></h2>
+<p>To only build the resulting project, you have to have the following things installed:</p>
+<ul class="simple">
+<li>Java &gt; 11</li>
+<li>Maven &gt; 3.6.2</li>
+</ul>
+<p>No special configuration of the tools is required. If you have multiple Java versions installed and the default version is not compatible with the version above, ensure to set the <code class="docutils literal notranslate"><span class="pre">JAVA_HOME</span></code> variable is set to the compatible version before launching Maven.</p>
+</div>
+<div class="section" id="requirements-for-developing-in-eclipse">
+<h2>Requirements for Developing in Eclipse<a class="headerlink" href="#requirements-for-developing-in-eclipse" title="Permalink to this headline">¶</a></h2>
+<p>We assume that you are using the Eclipse IDE for development purposes because other IDEs struggle with using Eclipse update sites. Before staring, you have to do the steps described in <a class="reference internal" href="#minimum-requirements-for-building"><span class="std std-ref">Minimum Requirements for Building</span></a>.</p>
+<p>Download the  <a class="reference external" href="https://www.eclipse.org/downloads/packages/">Eclipse Modeling Edition</a> in a recent version. The modeling edition provides best compatibility with our development workflow. The minimum required version depends on the parent POM used in the root <code class="docutils literal notranslate"><span class="pre">pom.xml</span></code> file. For the version used in this repository, you have to use <code class="docutils literal notranslate"><span class="pre">2019-09</span></code> at least.</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">There is no description about how to determine the required Eclipse version yet. This has to be added to the documentation.</p>
+</div>
+<p>Install all dependencies included by the build scripts. Again, this dependens on the used parent POM. It is usually safe to install all dependencies described in the latest target platform of our correpsonding <a class="reference external" href="https://github.com/MDSD-Tools/Maven-Build-TargetPlatforms/tree/master/targetPlatforms">Github repository</a>.</p>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">There is no description about how to determine the required features yet. This has to be added to the documentation.</p>
+</div>
+</div>
+<div class="section" id="requirements-of-specific-project">
+<h2>Requirements of Specific Project<a class="headerlink" href="#requirements-of-specific-project" title="Permalink to this headline">¶</a></h2>
+<p>This project has no additional dependencies but others might have. Please refer to <a class="reference internal" href="dev-eclipseplugin.html#dev-eclipse-build"><span class="std std-ref">Adjusting Build Scripts</span></a> for information where to find additional project dependencies.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dev-eclipseplugin.html" class="btn btn-neutral float-right" title="Developing an Eclipse Plugin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quick Start Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, MDSD.tools
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> Other Versions</span>
+        v: master
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        <dl>
+            <dt>Tags</dt>
+            <dd><a href="0.0.2/development-environment.html">0.0.2</a></dd>
+            <dd><a href="v0.0.1/index.html">v0.0.1</a></dd>
+        </dl>
+        <dl>
+            <dt>Branches</dt>
+            <dd><a href="master/development-environment.html">master</a></dd>
+        </dl>
+    </div>
+</div>
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
